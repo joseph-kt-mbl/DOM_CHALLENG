@@ -52,8 +52,41 @@ for(let i=0;i<15;i++){
                                 +"height:11vh;"
                                 +"flex-direction:column;"
                                 +"background-color:#fff;"
-                                +"margin: 10px 0";
-                
+                                +"margin: 10px 0;"
+                                +"border:1px solid transparent";
+            temp.addEventListener("mouseenter",_ =>{
+                setTimeout(() => {
+                    temp.style.borderBottomColor = "#11684c";
+                }, 0);
+                setTimeout(() => {
+                    temp.style.borderRightColor = "#11684c";
+                }, 300);
+                setTimeout(() => {
+                    temp.style.borderTopColor = "#11684c";
+                }, 600);
+                setTimeout(() => {
+                    temp.style.borderLeftColor = "#11684c";
+                    temp.style.backgroundColor = "#11684cee";
+                    temp.children[1].style.color = "#fff";
+                }, 900);
+            })
+            
+            temp.addEventListener("mouseleave",_ =>{
+                setTimeout(() => {
+                    temp.style.borderLeftColor = "transparent";
+                }, 0);
+                setTimeout(() => {
+                    temp.style.borderTopColor = "transparent";
+                }, 300);
+                setTimeout(() => {
+                    temp.style.borderRightColor = "transparent";
+                }, 600);
+                setTimeout(() => {
+                    temp.style.borderBottomColor = "transparent";
+                    temp.style.backgroundColor = "#fff";
+                    temp.children[1].style.color = "#eee";
+                }, 900);
+            })
             temp.appendChild(numberOfProduct);
             temp.appendChild(title);
 
