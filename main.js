@@ -43,7 +43,7 @@ for(let i=0;i<15;i++){
             numberOfProduct.style.cssText = "margin:0 0 3px 0;font-size:28px";
         let title = document.createElement("span");
             title.textContent = "product";
-            title.style.cssText = "color:#888"
+            title.style.cssText = "color:#333"
 
             temp.style.cssText = "display:flex;"
                                 +"justify-content:center;"
@@ -54,6 +54,7 @@ for(let i=0;i<15;i++){
                                 +"background-color:#fff;"
                                 +"margin: 10px 0;"
                                 +"border:1px solid transparent";
+            
             temp.addEventListener("mouseenter",_ =>{
                 setTimeout(() => {
                     temp.style.borderBottomColor = "#11684c";
@@ -84,7 +85,7 @@ for(let i=0;i<15;i++){
                 setTimeout(() => {
                     temp.style.borderBottomColor = "transparent";
                     temp.style.backgroundColor = "#fff";
-                    temp.children[1].style.color = "#eee";
+                    temp.children[1].style.color = "#333";
                 }, 900);
             })
             temp.appendChild(numberOfProduct);
@@ -118,8 +119,10 @@ for(let i=0;i<15;i++){
                                     +"justify-content: center;"
                                     +"align-items:center;"
                                     +"padding:5px 10px;"
-                                    +"list-style:none";
-        
+                                    +"list-style:none;";
+                                    +"height : 70%;"
+                                    +"font-weight:bold;"
+                                    +`font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;`;
     }
 
 let myFooter = document.createElement("footer");
@@ -148,5 +151,31 @@ myNav.after(prdContainer);
 prdContainer.after(myFooter);
 
 
+    for (let i = 0; i < items.length; i++) {
+        listItems[i].addEventListener("mouseenter", _ => {
+            listItems[i].style.paddingBottom = "5px";
+            listItems[i].style.borderBottom = "1px solid #11684c";
+        });
+        listItems[i].addEventListener("mouseleave", _ => {
+            listItems[i].style.borderBottom = "1px solid transparent";
+        });
+    
+        listItems[i].addEventListener("click", ()=> {
+            listItems[i].style.color = "#11684c";
+            for(let k=0;k<listItems.length;k++){
+                if(k!==i){
+                    listItems[k].style.color = "#000";
+                }
+            }
+        });
+    }
+
+listItems[0].click();
 
 
+
+let lis = document.getElementsByTagName("li");
+
+for(let i=0;i<lis.length;i++){
+    lis[i].style.listStyle = 'none';
+}
